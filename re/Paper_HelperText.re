@@ -1,33 +1,11 @@
-[@bs.module "react-native-paper"]
-external reactClass: ReasonReact.reactClass = "HelperText";
-
-[@bs.deriving abstract]
-type props = {
-  [@bs.optional]
-  theme: Paper_ThemeProvider.appTheme,
-  [@bs.optional]
-  style: ReactNative.Style.t,
-  [@bs.optional]
-  visible: bool,
-  [@bs.as "type"]
-  type_: string,
-};
-
-let make =
-    (~theme=?, ~style=?, ~type_: [ | `error | `info], ~visible, children) =>
-  ReasonReact.wrapJsForReason(
-    ~reactClass,
-    ~props=
-      props(
-        ~theme?,
-        ~type_=
-          switch (type_) {
-          | `error => "error"
-          | `info => "info"
-          },
-        ~style?,
-        ~visible,
-        (),
-      ),
-    children,
-  );
+[@bs.module "react-native-paper"] [@react.component]
+external make:
+  (
+    ~theme: Paper_ThemeProvider.appTheme=?,
+    ~style: ReactNative.Style.t=?,
+    ~type_: [@bs.string] [ | `error | `info],
+    ~visible: bool,
+    ~children: React.element
+  ) =>
+  React.element =
+  "HelperText";
