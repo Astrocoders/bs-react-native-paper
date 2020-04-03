@@ -1,15 +1,15 @@
 [@bs.module "react-native-paper"]
 external reactClass: ReasonReact.reactClass = "BottomNavigation";
 
+type icon;
+
 [@bs.deriving abstract]
 type _route = {
   key: string,
   [@bs.optional]
   title: string,
-  [@bs.optional] [@bs.as "icon"]
-  iconAsString: string,
-  [@bs.optional] [@bs.as "icon"]
-  iconAsRenderFunc: Icon.renderIcon,
+  [@bs.optional]
+  icon,
   [@bs.optional]
   color: string,
   [@bs.optional]
@@ -25,7 +25,7 @@ let route =
     _route(
       ~key,
       ~title?,
-      ~iconAsString=name,
+      ~icon=Obj.magic(name),
       ~color?,
       ~accessibilityLabel?,
       ~testID?,
@@ -35,7 +35,7 @@ let route =
     _route(
       ~key,
       ~title?,
-      ~iconAsRenderFunc=renderFunc,
+      ~icon=Obj.magic(renderFunc),
       ~color?,
       ~accessibilityLabel?,
       ~testID?,

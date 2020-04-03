@@ -5,7 +5,6 @@
   },
   "bs-dependencies": ["reason-react", "reason-react-native"],
   "refmt": 3,
-  "bsc-flags": ["-bs-super-errors"],
   "sources": [
     {
       "dir": "re"

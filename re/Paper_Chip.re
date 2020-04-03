@@ -5,7 +5,7 @@ external reactClass: ReasonReact.reactClass = "Chip";
 type modes = [ | [@bs.as "outlined"] `outlined | [@bs.as "flat"] `flat];
 
 [@bs.deriving abstract]
-type props = {
+type props('a) = {
   [@bs.optional]
   mode: string,
   [@bs.optional]
@@ -16,10 +16,8 @@ type props = {
   accessibilityLabel: string,
   [@bs.optional]
   avatar: ReasonReact.reactElement,
-  [@bs.optional] [@bs.as "icon"]
-  iconAsString: string,
-  [@bs.optional] [@bs.as "icon"]
-  iconAsRenderFunc: Icon.renderIcon,
+  [@bs.optional]
+  icon: 'a,
   [@bs.optional]
   style: ReactNative.Style.t,
   [@bs.optional]
@@ -55,7 +53,7 @@ let make =
           ~disabled?,
           ~accessibilityLabel?,
           ~avatar?,
-          ~iconAsString=name,
+          ~icon=Obj.magic(name),
           ~style?,
           ~theme?,
           ~onPress?,
@@ -69,7 +67,7 @@ let make =
           ~disabled?,
           ~accessibilityLabel?,
           ~avatar?,
-          ~iconAsRenderFunc=renderFunc,
+          ~icon=Obj.magic(renderFunc),
           ~style?,
           ~theme?,
           ~onPress?,

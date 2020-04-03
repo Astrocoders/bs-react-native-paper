@@ -13,12 +13,9 @@ module Icon = {
   external reactClass: ReasonReact.reactClass = "Icon";
 
   [@bs.deriving abstract]
-  type props = {
+  type props('a) = {
     color: string,
-    [@bs.optional] [@bs.as "icon"]
-    iconAsString: string,
-    [@bs.optional] [@bs.as "icon"]
-    iconAsRenderFunc: Icon.renderIcon,
+    icon: 'a,
     [@bs.optional]
     style: ReactNative.Style.t,
   };
@@ -28,9 +25,10 @@ module Icon = {
       ~reactClass,
       ~props=
         switch (icon) {
-        | Icon.Name(name) => props(~color, ~iconAsString=name, ~style?, ())
+        | Icon.Name(name) =>
+          props(~color, ~icon=Obj.magic(name), ~style?, ())
         | Icon.Element(renderFunc) =>
-          props(~color, ~iconAsRenderFunc=renderFunc, ~style?, ())
+          props(~color, ~icon=Obj.magic(renderFunc), ~style?, ())
         },
     );
 };

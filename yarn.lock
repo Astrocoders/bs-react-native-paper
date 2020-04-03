@@ -146,10 +146,10 @@ braces@^2.3.1:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
-bs-platform@^5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-5.0.3.tgz#2b167603ef52574cb9534fabab702f6013715e6c"
-  integrity sha512-GAeypBebeDGTay5kJ3v5Z3Whp1Q4zQ0hAttflVtPG3zps88xDZnVAlS3JGIIBDmJFEMyNtv5947a/IWKvWXcPw==
+bs-platform@^7.2.2:
+  version "7.2.2"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-7.2.2.tgz#76fdc63e4889458ae3d257a0132107a792f2309c"
+  integrity sha512-PWcFfN+jCTtT/rMaHDhKh+W9RUTpaRunmSF9vbLYcrJbpgCNW6aFKAY33u0P3mLxwuhshN3b4FxqGUBPj6exZQ==
 
 buffer-from@^1.0.0:
   version "1.0.0"
@@ -1313,10 +1313,10 @@ readable-stream@^2.2.2:
     string_decoder "~1.0.3"
     util-deprecate "~1.0.1"
 
-reason-react-native@^0.60.0:
-  version "0.60.0"
-  resolved "https://registry.yarnpkg.com/reason-react-native/-/reason-react-native-0.60.0.tgz#7adb9837f28d79d9f1e009b5d01ae864aff15d51"
-  integrity sha512-7vq7KIaY1kGb5xnWVewuy8ttBx7/HAgeKfiwDYV3rij6Z89vU6QIheR6rENV8UxaKwRN/Gw168ladWLM042k9A==
+reason-react-native@^0.61.1:
+  version "0.61.1"
+  resolved "https://registry.yarnpkg.com/reason-react-native/-/reason-react-native-0.61.1.tgz#fe5cac135a4ed0aacddf9162f532bde7d08781e0"
+  integrity sha512-ep9gThi4dz5CLXzFmNaj/6LgtIKQUbjY4mbYmH3pxnuojC0D7oG7q5GSm3CI8yk32Z+3liY0JrMOx+jVjsuomg==
 
 reason-react@^0.7.0:
   version "0.7.0"

@@ -2,7 +2,7 @@
 external reactClass: ReasonReact.reactClass = "IconButton";
 
 [@bs.deriving abstract]
-type props = {
+type props('a) = {
   [@bs.optional]
   color: string,
   [@bs.optional]
@@ -13,10 +13,8 @@ type props = {
   accessibilityLabel: string,
   [@bs.optional]
   onPress: unit => unit,
-  [@bs.optional] [@bs.as "icon"]
-  iconAsString: string,
-  [@bs.optional] [@bs.as "icon"]
-  iconAsRenderFunc: Icon.renderIcon,
+  [@bs.optional]
+  icon: 'a,
   [@bs.optional]
   style: ReactNative.Style.t,
   [@bs.optional]
@@ -44,7 +42,7 @@ let make =
           ~size?,
           ~disabled?,
           ~accessibilityLabel?,
-          ~iconAsString=name,
+          ~icon=Obj.magic(name),
           ~onPress?,
           ~style?,
           ~theme?,
@@ -56,7 +54,7 @@ let make =
           ~size?,
           ~disabled?,
           ~accessibilityLabel?,
-          ~iconAsRenderFunc=renderFunc,
+          ~icon=Obj.magic(renderFunc),
           ~onPress?,
           ~style?,
           ~theme?,
